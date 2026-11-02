@@ -36,7 +36,7 @@ const views = {
   grove: makeCam(world.landmarks[1].x, world.landmarks[1].y + 4, -Math.PI / 2),
   north: makeCam(world.bridge.x0 + 1, world.bridge.y - 3, -Math.PI / 2 + 0.4),
   east: makeCam(world.spawn.x, world.spawn.y, -0.15),
-  start: makeCam(18.5, 36.5, -0.5),
+  start: makeCam(18.5, 36.5, -1.35),
   bank: makeCam(19.5, 44.5, -0.3),
   glade: makeCam(world.landmarks[0].x, world.landmarks[0].y + 2.6, -Math.PI / 2 + 0.2),
   deck: makeCam(world.bridge.x0 + 0.6, world.bridge.y + 1.15, 0.02),

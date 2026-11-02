@@ -1,14 +1,14 @@
 :root {
-  --ink: #ece7d4;
-  --ink-dim: #b9b8a4;
-  --ink-faint: #7f8578;
-  --accent: #e3c07a;
-  --accent-bright: #f0d49a;
-  --accent-soft: rgba(227, 192, 122, 0.18);
-  --line: rgba(236, 231, 212, 0.15);
-  --line-strong: rgba(236, 231, 212, 0.28);
-  --panel: rgba(6, 14, 10, 0.86);
-  --bg: #07100b;
+  --ink: #eee8d8;
+  --ink-dim: #c0c1af;
+  --ink-faint: #878d7f;
+  --accent: #e5c98a;
+  --accent-bright: #f3dcaa;
+  --accent-soft: rgba(229, 201, 138, 0.16);
+  --line: rgba(238, 232, 216, 0.14);
+  --line-strong: rgba(238, 232, 216, 0.26);
+  --panel: rgba(6, 15, 12, 0.88);
+  --bg: #07110d;
   --font: "IBM Plex Mono", "JetBrains Mono", "Cascadia Mono", "SFMono-Regular", Menlo, Consolas,
     "Liberation Mono", monospace;
 }
@@ -63,16 +63,10 @@ button {
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  opacity: 0.72;
+  opacity: 0.82;
   background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.075) 0,
-      rgba(0, 0, 0, 0.075) 1px,
-      rgba(0, 0, 0, 0) 1px,
-      rgba(0, 0, 0, 0) 3px
-    ),
-    radial-gradient(130% 100% at 50% 42%, rgba(3, 8, 6, 0) 42%, rgba(3, 8, 6, 0.52) 100%);
+    linear-gradient(to bottom, rgba(246, 224, 170, 0.035), rgba(3, 8, 6, 0) 28%),
+    radial-gradient(118% 92% at 50% 44%, rgba(3, 8, 6, 0) 42%, rgba(3, 8, 6, 0.5) 100%);
 }
 
 /* ------------------------------------------------------------------ HUD */
@@ -97,14 +91,19 @@ button {
 .hud-zone {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 10px;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(4, 11, 8, 0.44);
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-dim);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
   white-space: nowrap;
+  backdrop-filter: blur(10px);
 }
 
 #zone {
@@ -130,13 +129,17 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin-right: 4px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(4, 11, 8, 0.44);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-dim);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
   white-space: nowrap;
+  backdrop-filter: blur(10px);
 }
 
 .lights-star {
@@ -149,13 +152,13 @@ button {
 .icon-btn {
   appearance: none;
   border: 1px solid var(--line);
-  background: rgba(4, 10, 7, 0.36);
+  background: rgba(4, 11, 8, 0.44);
   color: var(--ink-dim);
   border-radius: 999px;
-  padding: 7px 12px;
+  padding: 8px 12px;
   font-size: 9px;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   cursor: pointer;
   backdrop-filter: blur(8px);
@@ -200,8 +203,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(3, 8, 6, 0.52);
-  backdrop-filter: blur(3px);
+  background: rgba(3, 8, 6, 0.58);
+  backdrop-filter: blur(5px);
 }
 
 .is-hidden {
@@ -232,12 +235,12 @@ button {
 .tree-mark {
   margin: 0 0 18px;
   color: var(--accent);
-  opacity: 0.78;
+  opacity: 0.72;
   font-family: var(--font);
-  font-size: clamp(9px, 1.15vw, 12px);
-  line-height: 1.08;
-  letter-spacing: 0.02em;
-  text-shadow: 0 0 24px var(--accent-soft);
+  font-size: clamp(8.5px, 1.05vw, 11px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 26px var(--accent-soft);
 }
 
 .eyebrow {
@@ -261,8 +264,9 @@ h2 {
 h1 {
   font-size: clamp(2.05rem, 10.5vw, 5rem);
   line-height: 0.94;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-bottom: 0.3em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -276,8 +280,9 @@ h2 {
   max-width: 48ch;
   margin: 0 auto 26px;
   color: var(--ink-dim);
-  font-size: clamp(11.5px, 1.35vw, 14px);
-  line-height: 1.75;
+  font-size: clamp(12px, 1.35vw, 14px);
+  line-height: 1.8;
+  text-wrap: balance;
   text-shadow: 0 1px 14px rgba(0, 0, 0, 0.6);
 }
 
@@ -290,11 +295,11 @@ h2 {
 
 .btn {
   appearance: none;
-  border-radius: 2px;
-  padding: 14px 22px;
+  border-radius: 3px;
+  padding: 14px 24px;
   font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.22s ease, border-color 0.22s ease, background 0.22s ease,
@@ -604,7 +609,13 @@ body.touch.playing:not(.paused) .toast {
 
 @media (max-width: 520px) {
   .hud {
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .hud-zone {
+    padding: 7px 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
   }
 
   .lights {

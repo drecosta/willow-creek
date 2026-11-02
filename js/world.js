@@ -238,18 +238,18 @@ export function generateWorld(seed = SEED) {
     [glades[1].x, glades[1].y],
     [riverCenter(10) + 8, 10],
     [glades[4].x, glades[4].y],
-  ], 1.25);
+  ], 1.45);
   carveTrail(w, [
     [riverCenter(43) - 7.2, 43],
     [riverCenter(46) - 9.2, 46],
     [glades[3].x, glades[3].y],
-  ], 1.0);
+  ], 1.15);
   carveTrail(w, [
     [riverCenter(31) - 5.4, 31],
     [riverCenter(34) - 12.5, 35],
     [glades[2].x, glades[2].y],
     [riverCenter(38) - 9, 39],
-  ], 0.95);
+  ], 1.1);
 
   // ---- forest ---------------------------------------------------------
   const pathClear = new Uint8Array(w.w * w.h);
@@ -339,7 +339,7 @@ export function generateWorld(seed = SEED) {
 
   // Ambient fireflies gather near water and in the glades.
   const fireflies = [];
-  for (let n = 0; n < 90; n++) {
+  for (let n = 0; n < 64; n++) {
     let x;
     let y;
     let tries = 0;
@@ -361,7 +361,7 @@ export function generateWorld(seed = SEED) {
 
   // Drifting pollen / petals.
   const motes = [];
-  for (let n = 0; n < 55; n++) {
+  for (let n = 0; n < 38; n++) {
     const x = 3 + rng() * (w.w - 6);
     const y = 3 + rng() * (w.h - 6);
     motes.push({
@@ -397,7 +397,7 @@ export function generateWorld(seed = SEED) {
 
   w.spawn = spawn;
   // Scenic first step: on the trail above the creek, bridge and river ahead.
-  w.start = { x: 18.5, y: 36.5, angle: -0.5 };
+  w.start = { x: 18.5, y: 36.5, angle: -1.35 };
   w.bridge = bridge;
   w.pool = pool;
   w.glade = glades[0];
