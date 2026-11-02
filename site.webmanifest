@@ -1,0 +1,14 @@
+{
+  "name": "Willow Creek",
+  "short_name": "Willow Creek",
+  "description": "A first-person ASCII forest creek walk.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#07100b",
+  "theme_color": "#07100b",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

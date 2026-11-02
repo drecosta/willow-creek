@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <title>Willow Creek — an ASCII walk</title>
+    <meta
+      name="description"
+      content="A quiet first-person walk through a forest and along a creek, drawn entirely in ASCII. Made for a phone in your hand."
+    />
+    <meta name="theme-color" content="#07100b" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Willow Creek" />
+    <meta property="og:title" content="Willow Creek — an ASCII walk" />
+    <meta
+      property="og:description"
+      content="Follow the creek. Gather the nine spirit lights. A small, quiet first-person walk drawn in characters."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="view" role="img" aria-label="A first-person view of Willow Creek, drawn in ASCII characters"></canvas>
+    <div id="fx" aria-hidden="true"></div>
+
+    <header id="hud" class="hud is-hidden">
+      <div class="hud-zone">
+        <span id="zone">RIVERBANK</span>
+        <span class="hud-sep" aria-hidden="true">·</span>
+        <span id="heading">NE</span>
+      </div>
+      <div class="hud-actions">
+        <span class="lights" aria-live="polite">
+          <span class="lights-star" aria-hidden="true">*</span>
+          <span id="lights">0 / 9</span>
+        </span>
+        <button id="mute" class="icon-btn" type="button" aria-pressed="false" title="Toggle sound (M)">audio</button>
+        <button id="help-btn" class="icon-btn round" type="button" title="Controls (H)" aria-label="How to play">?</button>
+      </div>
+    </header>
+
+    <div id="joystick" aria-hidden="true">
+      <div class="stick-ring"></div>
+      <div id="knob" class="stick-knob"></div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <section id="start" class="screen start">
+      <div class="start-scrim" aria-hidden="true"></div>
+      <div class="intro">
+        <pre class="tree-mark" aria-hidden="true">        /\
+       /  \
+      /    \
+     /      \
+    /        \
+   /__________\
+        ||
+        ||</pre>
+        <p class="eyebrow">a small walk in a large wood</p>
+        <h1>Willow Creek</h1>
+        <p class="lede">
+          Follow the creek. Gather the nine spirit lights.<br />
+          There is no hurry.
+        </p>
+        <div class="actions">
+          <button id="begin" class="btn primary" type="button">Begin the walk</button>
+          <button id="how" class="btn ghost" type="button">How to play</button>
+        </div>
+        <p class="footnote">sound on · headphones recommended</p>
+      </div>
+    </section>
+
+    <section id="help" class="screen centre is-hidden" aria-hidden="true">
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="help-title">
+        <p class="eyebrow">how to play</p>
+        <h2 id="help-title">Walk softly.</h2>
+        <div class="controls">
+          <div><kbd>W A S D</kbd><span>walk</span></div>
+          <div><kbd>drag</kbd><span>look around</span></div>
+          <div><kbd>shift</kbd><span>hurry</span></div>
+          <div><kbd>M</kbd><span>sound on / off</span></div>
+          <div><kbd>H</kbd><span>this page</span></div>
+        </div>
+        <p class="body-copy">
+          On a phone, use the left thumbstick to walk and drag the right side of the screen to look.
+        </p>
+        <p class="body-copy">
+          Nine spirit lights wait along the creek, on the old bridge, and in the quiet glades. Walk close to
+          gather them.
+        </p>
+        <button id="close-help" class="btn primary" type="button">Back to the woods</button>
+      </div>
+    </section>
+
+    <section id="end" class="screen centre is-hidden" aria-hidden="true">
+      <div class="sheet end-sheet" role="dialog" aria-modal="true" aria-labelledby="end-title">
+        <p class="eyebrow">the walk is complete</p>
+        <h2 id="end-title">Nine lights, one creek.</h2>
+        <p id="end-copy" class="body-copy">
+          The glade is quiet now. Somewhere behind you, the water keeps talking.
+        </p>
+        <div class="actions">
+          <button id="wander" class="btn primary" type="button">Keep wandering</button>
+          <button id="again" class="btn ghost" type="button">Walk again</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="loading" class="loading">
+      <div>
+        <div class="loading-mark" aria-hidden="true">WILLOW CREEK</div>
+        <p class="eyebrow">gathering light<span class="cursor">_</span></p>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="noscript">Willow Creek needs JavaScript to grow. Please enable it and take a walk.</div>
+    </noscript>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
